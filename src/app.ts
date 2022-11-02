@@ -1,4 +1,5 @@
 const app = document.getElementById('gantt')!;
+const taskPane = app.querySelector<HTMLDivElement>('.gantt-task-pane')!;
 const timeline = app.querySelector<HTMLDivElement>('.gantt-timeline')!;
 
 const gridCols = 30;
@@ -18,10 +19,20 @@ const renderGridColumns = () => {
     const totalCells = gridCols * gridRows;
     let html = '';
 
-    // Add all content cells
-    for (let i = 0; i < totalCells; i++) {
-        html += '<div class="gantt-timeline-cell">&nbsp;</div>';
+    // Add header cells
+    html += '<div class="gantt-timeline-header gantt-cell-container">';
+    for (let i = 0; i < gridCols; i++) {
+        html += `<div class="gantt-cell">${i + 1}</div>`;
     }
+    html += '</div>';
+
+    // Add content cells
+    html += '<div class="gantt-timeline-cells gantt-cell-container">';
+    for (let i = 0; i < totalCells; i++) {
+        html += '<div class="gantt-cell">&nbsp;</div>';
+    }
+    html += '</div>';
+
     return html;
 };
 

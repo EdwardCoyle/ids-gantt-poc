@@ -5,6 +5,13 @@
 :root {
     --border-color: #D7D7D8;
     --primary-color: #0072ED;
+    --cell-header-color: #606066;
+    --cell-text-color: #2f2f32;
+
+    --gutter-md: 8px;
+
+    /* Configured dynamically in `src/app.ts` */
+    --task-pane-grid-columns: '1fr';
     --timeline-grid-columns: '1fr';
 }
 
@@ -13,7 +20,7 @@ html {
 }
 
 /**********************************************************
- * Gantt Styles
+ * Gantt: Main Container Styles
  */
 
 .gantt {
@@ -21,10 +28,14 @@ html {
     display: flex;
     flex-direction: column;
     min-height: 300px;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .gantt-header,
 .gantt-footer {
+    padding: var(--gutter-md);
     flex-grow: 0;
 }
 
@@ -39,22 +50,60 @@ html {
     flex-grow: 1;
 }
 
+.gantt-footer {
+    text-align: right;
+}
+
+/**********************************************************
+ * Gantt: Task Pane Styles
+ */
+
 .gantt-task-pane {
     flex-grow: 0;
 }
 
+.gantt-task-pane-header {
+    color: var(--cell-header-color);
+}
+
+/**********************************************************
+ * Gantt: Timeline Styles
+ */
+
 .gantt-timeline {
-    border-collapse: collapse;
-    display: grid;
-    gap: 1px; /* accounts for the cell 'outline' */
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
+}
+
+.gantt-timeline-header,
+.gantt-timeline-cells {
+    flex-grow: 1;
+}
+
+.gantt-timeline-header {
+    font-size: 14pt;
+    margin-block-end: 1px; /* Fix header double-border problem due to separation */
+}
+
+.gantt-timeline-header .gantt-cell {
+    color: var(--cell-text-color);
+    text-align: center;
+}
+
+/**********************************************************
+ * Gantt: Shared Cell/Container Styles
+ */
+
+.gantt-cell-container {
+    display: grid;
     grid-template-columns: var(--timeline-grid-columns);
+
+    /* accounts for the cells' "outline" property (simulates "border-collapse" but without using a table) */
+    gap: 1px;
 }
 
-.gantt-timeline-cell {
+.gantt-cell {
     outline: 1px solid var(--border-color);
-}
-
-.gantt-footer {
-    text-align: right;
+    min-height: 45px;
 }
