@@ -2,9 +2,9 @@
 
 This is a proof-of-concept for a potential IDS Gantt Chart.  The goal is to make a performant component capable of handling many data points with built-in HTML and SVG DOM elements.
 
-[IDS Gantt Chart WebComponent's task](https://github.com/infor-design/enterprise-wc/issues/889)
+For more information, see the [IDS Web Components' Gantt Chart issue](https://github.com/infor-design/enterprise-wc/issues/889), as well as the [TODO checklist](./TODO.md) for this project.
 
-## Usage
+## Project Usage
 
 To view the project:
 - `git clone` this repo

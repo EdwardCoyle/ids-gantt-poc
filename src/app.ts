@@ -8,6 +8,7 @@ const timeline = app.querySelector<HTMLDivElement>('.gantt-timeline')!;
 // @TODO pull this from some sort of calendar configuration (days/months/etc)
 const gridCols = 30;
 
+// Calculates number of rows to display based on data
 const getTotalRows = (thisData: IdsGanttChartData) => {
     let rows = 0;
     rows += thisData.groups.length;
@@ -17,6 +18,7 @@ const getTotalRows = (thisData: IdsGanttChartData) => {
     return rows;
 }
 
+// Creates a CSS Grid Columns definition for the task pane based on number of headers
 const getTaskPaneColsCSS = () => {
     let cols = '';
     for (let i = 0; i < data.headers.length; i++) {
@@ -25,6 +27,8 @@ const getTaskPaneColsCSS = () => {
     return cols;
 };
 
+// Renders task pane grid columns
+// @TODO build in support for accordions
 const renderTaskPaneColumns = (thisData: IdsGanttChartData) => {
     const totalRows = getTotalRows(thisData);
     const totalCells = totalRows * 2;

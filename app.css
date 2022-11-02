@@ -29,6 +29,8 @@ html {
     contain: content;
     display: flex;
     flex-direction: column;
+
+    max-height: 100vh;
     min-height: 300px;
 
     -webkit-font-smoothing: antialiased;
@@ -104,6 +106,10 @@ html {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+
+    /* disable the next line to prevent scrollbars */
+    /* @TODO work on scroll behaviors in both directions */
+    overflow-x: auto;
 }
 
 .gantt-timeline-header,
