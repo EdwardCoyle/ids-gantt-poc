@@ -16,6 +16,7 @@ This is a proof-of-concept for a potential IDS Gantt Chart.  The goal is to make
 
 ### Reading material
 
+- ["Gantt.com" - Your one-stop-shop for all things Gantt!](https://www.gantt.com/)
 - ["Creating An Interactive Gantt Chart Component With Vanilla JavaScript" - Anna Prenzel](https://www.smashingmagazine.com/2021/08/interactive-gantt-chart-component-vanilla-javascript/)
 - ["What is a Gantt Chart?" - Monday.com blog](https://monday.com/blog/project-management/everything-you-want-to-know-about-gantt-charts/#:~:text=A%20Gantt%20chart%20is%20a,dates%20are%20laid%20out%20horizontally.)
 - ["Gantt Chart Guide" - ProjectManager.com](https://www.projectmanager.com/guides/gantt-chart)
