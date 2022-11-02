@@ -4,6 +4,13 @@ This is a proof-of-concept for a potential IDS Gantt Chart.  The goal is to make
 
 [IDS Gantt Chart WebComponent's task](https://github.com/infor-design/enterprise-wc/issues/889)
 
+## Usage
+
+To view the project:
+- `git clone` this repo
+- `npm i` to install dependencies
+- `npm start` and navigate to http://localhost:8080
+
 ## Inspiration
 
 ### Existing components
