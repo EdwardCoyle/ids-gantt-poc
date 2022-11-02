@@ -5,6 +5,7 @@
 :root {
     --border-color: #D7D7D8;
     --primary-color: #0072ED;
+    --timeline-grid-columns: '1fr';
 }
 
 html {
@@ -39,11 +40,19 @@ html {
 }
 
 .gantt-task-pane {
-    
+    flex-grow: 0;
 }
 
 .gantt-timeline {
+    border-collapse: collapse;
     display: grid;
+    gap: 1px; /* accounts for the cell 'outline' */
+    flex-grow: 1;
+    grid-template-columns: var(--timeline-grid-columns);
+}
+
+.gantt-timeline-cell {
+    outline: 1px solid var(--border-color);
 }
 
 .gantt-footer {
