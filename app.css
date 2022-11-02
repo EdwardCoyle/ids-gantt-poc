@@ -9,6 +9,7 @@
     --cell-text-color: #2f2f32;
 
     --gutter-md: 8px;
+    --gutter-lg: 12px;
 
     /* Configured dynamically in `src/app.ts` */
     --task-pane-grid-columns: '1fr';
@@ -25,6 +26,7 @@ html {
 
 .gantt {
     border: 1px solid var(--border-color);
+    contain: content;
     display: flex;
     flex-direction: column;
     min-height: 300px;
@@ -55,15 +57,43 @@ html {
 }
 
 /**********************************************************
+ * Gantt: Shared Cell/Container Styles
+ */
+
+.gantt-cell-container {
+    display: grid;
+
+    /* accounts for the cells' "outline" property (simulates "border-collapse" but without using a table) */
+    gap: 1px;
+}
+
+.gantt-cell {
+    outline: 1px solid var(--border-color);
+    min-height: 45px;
+}
+
+/**********************************************************
  * Gantt: Task Pane Styles
  */
 
 .gantt-task-pane {
     flex-grow: 0;
+    margin-inline-end: 1px; /* Fix header double-border problem due to separation */
+}
+
+.gantt-task-pane .gantt-cell-container {
+    grid-template-columns: var(--task-pane-grid-columns);
 }
 
 .gantt-task-pane-header {
     color: var(--cell-header-color);
+    margin-block-end: 1px; /* Fix header double-border problem due to separation */
+}
+
+.gantt-task-pane-header .gantt-cell {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 /**********************************************************
@@ -81,6 +111,10 @@ html {
     flex-grow: 1;
 }
 
+.gantt-timeline .gantt-cell-container {
+    grid-template-columns: var(--timeline-grid-columns);
+}
+
 .gantt-timeline-header {
     font-size: 14pt;
     margin-block-end: 1px; /* Fix header double-border problem due to separation */
@@ -89,21 +123,4 @@ html {
 .gantt-timeline-header .gantt-cell {
     color: var(--cell-text-color);
     text-align: center;
-}
-
-/**********************************************************
- * Gantt: Shared Cell/Container Styles
- */
-
-.gantt-cell-container {
-    display: grid;
-    grid-template-columns: var(--timeline-grid-columns);
-
-    /* accounts for the cells' "outline" property (simulates "border-collapse" but without using a table) */
-    gap: 1px;
-}
-
-.gantt-cell {
-    outline: 1px solid var(--border-color);
-    min-height: 45px;
 }
