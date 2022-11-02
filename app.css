@@ -1,3 +1,51 @@
+/**********************************************************
+ * Reset/Base Styles
+ */
+
+:root {
+    --border-color: #D7D7D8;
+    --primary-color: #0072ED;
+}
+
 html {
-    font-family: 'sans serif';
+    font-family: 'Source Sans Pro', 'Arial', 'sans-serif';
+}
+
+/**********************************************************
+ * Gantt Styles
+ */
+
+.gantt {
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+}
+
+.gantt-header,
+.gantt-footer {
+    flex-grow: 0;
+}
+
+.gantt-content,
+.gantt-footer {
+    border-top: 1px solid var(--border-color);
+}
+
+.gantt-content {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.gantt-task-pane {
+    
+}
+
+.gantt-timeline {
+    display: grid;
+}
+
+.gantt-footer {
+    text-align: right;
 }

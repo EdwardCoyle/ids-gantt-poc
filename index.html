@@ -5,10 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>IDS Gantt Chart POC</title>
-  <script src="dist/bundle.js" defer></script>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600&amp;amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="app.css" />
+  <script src="dist/bundle.js" type="module" defer></script>
 </head>
 <body>
-  <div id="gantt"></div>
+  <div id="gantt" class="gantt">
+    <div class="gantt-header">
+      <div class="gantt-header-toolbar">
+        <button id="btn-today">Today</button>
+        <button id="btn-prev">&lt;</button>
+        <button id="btn-next">&gt;</button>
+        <button id="btn-datepicker-trigger">September 12, 2022 - September 14, 2022</button>
+      </div>
+    </div>
+    <div class="gantt-content">
+      <div class="gantt-task-pane"></div>
+      <div class="gantt-timeline"></div>
+    </div>
+    <div class="gantt-footer">
+      Legend goes here...
+    </div>
+  </div>
 </body>
 </html>
